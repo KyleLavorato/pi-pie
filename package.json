@@ -1,0 +1,63 @@
+{
+  "name": "pi-pie",
+  "version": "1.0.0",
+  "description": "A pixel-art pie splash header for the Pi coding agent",
+  "homepage": "https://kylelavorato.github.io/pi-pie/pie-selection.html",
+  "type": "module",
+  "license": "MIT",
+  "author": "Kyle Lavorato",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleLavorato/pi-pie.git"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "splash-screen",
+    "header",
+    "pixel-art",
+    "tui",
+    "coding-agent",
+    "extension",
+    "pie"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/pie-slice/index.ts"
+    ]
+  },
+  "files": [
+    "extensions",
+    "docs/pi-splash.png",
+    "docs/pie-selection.html",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "tsx scripts/check-pie-art.ts",
+    "typecheck": "tsc --noEmit",
+    "gallery": "node --experimental-strip-types ./extensions/pie-slice/preview.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "@earendil-works/pi-tui": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.87.1",
+    "@earendil-works/pi-tui": "0.87.1",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "5.9.3"
+  }
+}
